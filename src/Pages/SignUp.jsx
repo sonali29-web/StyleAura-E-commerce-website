@@ -82,7 +82,7 @@ const SignUp = () => {
 
               <button
                 type="submit"
-                className="mt-6 text-md text-white rounded-lg font-semibold p-3 bg-purple-900 rounded-lg hover:bg-purple-800"
+                className="mt-6 text-md text-white  font-semibold p-3 bg-purple-900 rounded-lg hover:bg-purple-800"
               >
                 Sign Up
               </button>
