@@ -4,6 +4,7 @@ import { DeleteWish } from "../featureSlice/wishlist/wishlistSlice";
 import { IndianRupee, ShoppingCart } from "lucide-react";
 import { AddCart } from "../featureSlice/cart/cartSlice";
 import { FcLike } from "react-icons/fc";
+import wishImg from "../assets/icons/Shopping bag-amico.png"
 
 const WishList = () => {
   const { wishlist } = useSelector((state) => state.wishlist);
@@ -17,6 +18,8 @@ const WishList = () => {
 
   const dispatch = useDispatch();
 
+
+
   return (
     <div className="flex flex-col pt-20 bg-white h-screen p-4">
       <h2 className="text-3xl font-semibold py-2">Wishlist</h2>
@@ -24,6 +27,8 @@ const WishList = () => {
         <span className="hover:text-purple-700">Home</span> {">"}{" "}
         <span className="hover:text-purple-700">wishist</span>
       </p>
+
+{wishlist.length===0 &&  <div className="flex flex-col justify-center items-center h-screen "><img className="w-100 object-contain" src={wishImg} alt="" /> <p className="mt-4 text-purple-500">Your wishlist is empty</p></div>}
 
       <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-8 bg-white p-4">
         {wishlist.map((wish) => (
@@ -68,6 +73,7 @@ const WishList = () => {
           </div>
         ))}
       </div>
+
     </div>
   );
 };
